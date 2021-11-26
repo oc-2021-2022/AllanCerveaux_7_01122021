@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Les Petits plats</title>
+    <link rel="stylesheet" href="./scss/main.scss" />
+  </head>
+  <body>
+    <nav class="navbar is-justify-content-center" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand is-flex-direction-column is-align-items-center">
+        <a class="navbar-item" href="/">
+          <img class="image" src="./resources/images/Logo.svg" alt="Logo" />
+        </a>
+        <h1 class="title is-2 lpp-primary">Les petits plats</h1>
+      </div>
+    </nav>
+    <main class="container">
+      <section>
+        <div class="control has-icon-right">
+          <input
+            class="input has-background-white-ter has-text-grey"
+            type="text"
+            name="term"
+            id="search_term"
+            placeholder="Rechercher un ingrédient, appareil, ustensiles ou une recette"
+          />
+          <span class="icon is-medium is-left">
+            <i class="fas fa-search"></i>
+          </span>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p>Footer Content</p>
+    </footer>
+    <script type="module" src="./scripts/main.js"></script>
+  </body>
+</html>

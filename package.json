@@ -1,0 +1,26 @@
+{
+  "name": "AllanCerveaux_7_XXXX2021",
+  "version": "1.0.0",
+  "repository": "git@github.com:oc-2021-2022/AllanCerveaux_7_XXXX2021.git",
+  "author": "Callan <cerveauxallanjean@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "parcel src/index.html --open",
+    "build": "parcel build src/index.html --public-url ./"
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "2.0.0-rc.0",
+    "eslint": "^7.32.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.24.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.1.0",
+    "modularscale-sass": "^3.0.10",
+    "parcel": "^2.0.0-rc.0",
+    "sass": "^1.35.1"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.4",
+    "bulma": "^0.9.3"
+  }
+}
