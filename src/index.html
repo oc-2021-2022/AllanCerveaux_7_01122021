@@ -6,19 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Les Petits plats</title>
     <link rel="stylesheet" href="./scss/main.scss" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body>
-    <nav class="navbar is-justify-content-center" role="navigation" aria-label="main navigation">
-      <div class="navbar-brand is-flex-direction-column is-align-items-center">
-        <a class="navbar-item" href="/">
-          <img class="image" src="./resources/images/Logo.svg" alt="Logo" />
-        </a>
-        <h1 class="title is-2 lpp-primary">Les petits plats</h1>
-      </div>
-    </nav>
-    <main class="container">
-      <section>
-        <div class="control has-icon-right">
+    <header class="container">
+      <nav class="navbar is-justify-content-center m-4" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand is-flex-direction-column is-align-items-center">
+          <a class="navbar-item" href="/">
+            <img class="image" src="./resources/images/Logo.svg" alt="Logo" />
+          </a>
+          <h1 class="title is-2 lpp-primary">Les petits plats</h1>
+        </div>
+      </nav>
+      <div class="field">
+        <div class="control has-icons-right">
           <input
             class="input has-background-white-ter has-text-grey"
             type="text"
@@ -26,15 +33,108 @@
             id="search_term"
             placeholder="Rechercher un ingrédient, appareil, ustensiles ou une recette"
           />
-          <span class="icon is-medium is-left">
+          <span class="icon is-right has-text-grey-darker">
             <i class="fas fa-search"></i>
           </span>
         </div>
+      </div>
+      <section class="tags mb-2 mt-2">
+        <span class="tag is-success">
+          tag-test
+          <button class="delete is-small"></button>
+        </span>
+        <span class="tag is-warning">
+          tag-test
+          <button class="delete is-small"></button>
+        </span>
+      </section>
+      <section>
+        <div class="dropdown">
+          <div class="dropdown-trigger">
+            <div class="field">
+              <div class="control has-icons-right">
+                <input class="input" type="search" placeholder="Ingredients" />
+                <span class="icon is-small is-right">
+                  <i class="fas fa-chevron-down"></i>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="dropdown-menu" id="ingredient">
+            <div class="dropdown-content">
+              <a href="" class="dropdown-item">Hello</a>
+            </div>
+          </div>
+        </div>
+        <div class="dropdown">
+          <div class="dropdown-trigger">
+            <div class="field">
+              <div class="control has-icons-right">
+                <input class="input" type="search" placeholder="Appareil" />
+                <span class="icon is-small is-right">
+                  <i class="fas fa-chevron-down"></i>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="dropdown-menu" id="ingredient">
+            <div class="dropdown-content">
+              <a href="" class="dropdown-item">Hello</a>
+            </div>
+          </div>
+        </div>
+        <div class="dropdown">
+          <div class="dropdown-trigger">
+            <div class="field">
+              <div class="control has-icons-right">
+                <input class="input" type="search" placeholder="Ustensiles" />
+                <span class="icon is-small is-right">
+                  <i class="fas fa-chevron-down"></i>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="dropdown-menu" id="ingredient">
+            <div class="dropdown-content">
+              <a href="" class="dropdown-item">Hello</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </header>
+    <main class="container">
+      <section class="columns">
+        <div class="column">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image" />
+              </figure>
+            </div>
+            <div class="card-content">
+              <div class="media">
+                <div class="media-left">
+                  <figure class="image is-48x48">
+                    <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image" />
+                  </figure>
+                </div>
+                <div class="media-content">
+                  <p class="title is-4">John Smith</p>
+                  <p class="subtitle is-6">@johnsmith</p>
+                </div>
+              </div>
+
+              <div class="content">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris. <a>@bulmaio</a>.
+                <a href="#">#css</a> <a href="#">#responsive</a>
+                <br />
+                <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
     </main>
-    <footer>
-      <p>Footer Content</p>
-    </footer>
     <script type="module" src="./scripts/main.js"></script>
   </body>
 </html>

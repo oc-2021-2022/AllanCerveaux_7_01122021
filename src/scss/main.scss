@@ -11,5 +11,15 @@ body {
 .select select::placeholder,
 .textarea::placeholder,
 .input::placeholder {
-  color: hsl(0, 0%, 29%);
+  color: $grey-dark;
+}
+
+.input {
+  border-color: $white-ter;
+}
+
+main > .section.card-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
