@@ -1,5 +1,4 @@
 
-
 export const CardGenerator = ({ name, image = '', ingredients, time, description }) => {
     return /* html */`
       <article class="column is-4">
