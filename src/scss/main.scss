@@ -23,3 +23,13 @@ main > .section.card-list {
   flex-direction: column;
   justify-content: space-around;
 }
+
+.column .card {
+  .media .media-left {
+    width: 40%;
+  }
+  .card-content .content {
+    height: 500px;
+    overflow: hidden;
+  }
+}
