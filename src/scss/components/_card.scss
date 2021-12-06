@@ -1,7 +1,27 @@
-.card-sizing {
-  height: 500px;
-}
-
-.col-4 .card .card-body {
-  text-overflow: ellipsis;
+.col-4 .card {
+  height: 100%;
+  background-color: #E7E7E7;
+;
+  .card-img-top {
+    height: 150px;
+    background-color: #C7BEBE
+  }
+  .card-body {
+    .card-title {
+      text-overflow: ellipsis;
+    }
+    ul li {
+      font-size: 0.7em;
+    }
+    p {
+      overflow:hidden;
+      line-height: 1.5rem;
+      max-height: 10.5rem;
+      -webkit-box-orient: vertical;
+      display: -webkit-box;
+      overflow: hidden !important;
+      text-overflow: ellipsis;
+      -webkit-line-clamp: 7;
+    }
+  }
 }
