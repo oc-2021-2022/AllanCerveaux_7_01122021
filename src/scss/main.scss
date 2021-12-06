@@ -1,23 +1,21 @@
-$primary-color: #d04f4f; 
+$primary-color: #d04f4f;
 
 // Import Default
 @import './base/default';
 
 // Import Component
-@import './components/card';
+@import './components/card', './components/badge';
 
-.lpp-primary {
-  color: $primary-color;
+.placeholder-white::placeholder {
+  color: $white;
 }
 
-.select select::placeholder,
-.textarea::placeholder,
-.input::placeholder {
-  color: $grey-dark;
+.bg-orange {
+  background-color: #ed6454;
 }
 
-.input {
-  border-color: $white-ter;
+.bg-green {
+  background-color: #68d9a4;
 }
 
 main > .section.card-list {
@@ -25,5 +23,3 @@ main > .section.card-list {
   flex-direction: column;
   justify-content: space-around;
 }
-
-

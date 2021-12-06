@@ -1,32 +1,19 @@
-
-export const CardGenerator = ({ name, image = '', ingredients, time, description }) => {
+export const CardGenerator = ({ name, image = 'https://via.placeholder.com/150', ingredients, time, description }) => {
     return /* html */`
-      <article class="column is-4">
-        <div class="card">
-          <div class="card-image has-background-grey-light">
-            <figure class="image is-4by3">
-              <img src="${image}" alt="${name}" />
-            </figure>
+      <article class="col-4 my-3">
+        <div class="card card-sizing">
+          <img class="card-img-top" src="${image}" alt="${name}" />
+          <div class="card-body flex-grow-0">
+            <div class="row">
+              <h2 class="card-title fs-4 col">${name}</h2>
+              <span class="card-text col-3">${time} <i class="far fa-clock"></i></span>
+            </div>
           </div>
-          <div class="card-content has-background-white-ter">
-            <div class="media is-flex is-align-items-center is-justify-content-space-between">
-              <div class="media-left is-flex-grow-1">
-                <h3 class="title is-5">${name}</h3>
-              </div>
-              <div class="media-content is-flex-grow-0">
-                <p class="title is-5"> 
-                  <i class="far fa-clock"></i>
-                  ${time} min
-                </p>
-              </div>
-            </div>
-
-            <div class="content columns">
-              <ul class="column">
-                ${ingredients.map(({ingredient, quantity, unit}) => `<li>${ingredient} ${quantity ?? ''} ${unit ?? ''}</li>`).join(' ')}
-              </ul>
-              <div class="column">${description}</div>
-            </div>
+          <div class="card-body overflow-hidden flex-grow-1">
+            <div class="row bg-secondary bg-opacity-25">
+              <ul class="list-group list-group-flush col-6">${ingredients.map(({ingredient, quantity, unit}) => /* html */`<li class="list-group-item bg-transparent border-0 py-1">${ingredient} ${quantity ?? ''} ${unit ?? ''}</li>`).join('')}</ul>
+              <p class="col ">${description}</p>
+            </duv>
           </div>
         </div>
       </article>

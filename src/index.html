@@ -15,95 +15,84 @@
     />
   </head>
   <body>
-    <header class="container mb-6">
-      <nav class="navbar is-justify-content-center m-4" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand is-flex-direction-column is-align-items-center">
-          <a class="navbar-item" href="/">
+    <header class="container">
+      <nav class="navbar d-flex justify-content-center" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand d-flex flex-column">
+          <a class="navbar-item align-self-center" href="/">
             <img class="image" src="./resources/images/Logo.svg" alt="Logo" />
           </a>
           <h1 class="title is-2 lpp-primary">Les petits plats</h1>
         </div>
       </nav>
-      <div class="field">
-        <div class="control has-icons-right">
-          <input
-            class="input has-background-white-ter has-text-grey"
-            type="text"
-            name="term"
-            id="search_term"
-            placeholder="Rechercher un ingrédient, appareil, ustensiles ou une recette"
-          />
-          <span class="icon is-right has-text-grey-darker">
-            <i class="fas fa-search"></i>
-          </span>
-        </div>
+      <div class="input-group border-0">
+        <input
+          class="form-control border-end-0 bg-secondary bg-opacity-25 border-0 p-3"
+          type="text"
+          name="term"
+          id="search_term"
+          placeholder="Rechercher un ingrédient, appareil, ustensiles ou une recette"
+        />
+        <span class="input-group-text bg-secondary bg-opacity-25 border-0 p-3 m-0">
+          <i class="fas fa-search"></i>
+        </span>
       </div>
       <section class="tags mb-2 mt-2">
-        <span class="tag is-success">
+        <div class="badge bg-primary p-2">
           tag-test
-          <button class="delete is-small"></button>
-        </span>
-        <span class="tag is-warning">
+          <span class="badge"><i class="fas fa-times"></i></span>
+        </div>
+        <div class="badge bg-primary p-2">
           tag-test
-          <button class="delete is-small"></button>
-        </span>
+          <span class="badge"><i class="fas fa-times"></i></span>
+        </div>
       </section>
-      <section>
-        <div class="dropdown">
-          <div class="dropdown-trigger">
-            <div class="field">
-              <div class="control has-icons-right">
-                <input class="input" type="search" placeholder="Ingredients" />
-                <span class="icon is-small is-right">
-                  <i class="fas fa-chevron-down"></i>
-                </span>
-              </div>
-            </div>
+      <section class="row">
+        <div class="col-2">
+          <div class="input-group border-0">
+            <input
+              class="form-control border-end-0 bg-primary placeholder-white text-white border-0 p-3"
+              list="datalistIngredientOptions"
+              id="inputIngredient"
+              placeholder="Ingrédient"
+            />
+            <span class="input-group-text bg-primary text-white border-0 p-3 m-0">
+              <i class="fas fa-chevron-down"></i>
+            </span>
           </div>
-          <div class="dropdown-menu" id="ingredient">
-            <div class="dropdown-content">
-              <a href="" class="dropdown-item">Hello</a>
-            </div>
-          </div>
+          <datalist id="datalistIngredientOptions"></datalist>
         </div>
-        <div class="dropdown">
-          <div class="dropdown-trigger">
-            <div class="field">
-              <div class="control has-icons-right">
-                <input class="input" type="search" placeholder="Appareil" />
-                <span class="icon is-small is-right">
-                  <i class="fas fa-chevron-down"></i>
-                </span>
-              </div>
-            </div>
+        <div class="col-2">
+          <div class="input-group border-0">
+            <input
+              class="form-control border-end-0 bg-green placeholder-white text-white border-0 p-3"
+              list="datalistKitchenApplianceOptions"
+              id="inputKitchenAppliance"
+              placeholder="Appareil"
+            />
+            <span class="input-group-text bg-green text-white border-0 p-3 m-0">
+              <i class="fas fa-chevron-down"></i>
+            </span>
           </div>
-          <div class="dropdown-menu" id="ingredient">
-            <div class="dropdown-content">
-              <a href="" class="dropdown-item">Hello</a>
-            </div>
-          </div>
+          <datalist id="datalistKitchenApplianceOptions"></datalist>
         </div>
-        <div class="dropdown">
-          <div class="dropdown-trigger">
-            <div class="field">
-              <div class="control has-icons-right">
-                <input class="input" type="search" placeholder="Ustensiles" />
-                <span class="icon is-small is-right">
-                  <i class="fas fa-chevron-down"></i>
-                </span>
-              </div>
-            </div>
+        <div class="col-2">
+          <div class="input-group border-0">
+            <input
+              class="form-control border-end-0 bg-orange placeholder-white text-white border-0 p-3"
+              list="datalistUstensilOptions"
+              id="inputUstensil"
+              placeholder="Ustensiles"
+            />
+            <span class="input-group-text bg-orange text-white border-0 p-3 m-0">
+              <i class="fas fa-chevron-down"></i>
+            </span>
           </div>
-          <div class="dropdown-menu" id="ingredient">
-            <div class="dropdown-content">
-              <a href="" class="dropdown-item">Hello</a>
-            </div>
-          </div>
+          <datalist id="datalistUstensilOptions"></datalist>
         </div>
       </section>
     </header>
-    <main class="container">
-      <section class="columns is-flex is-flex-wrap-wrap" id="recipe-list"></section>
+    <main class="container mt-4">
+      <section class="row" id="recipe-list"></section>
     </main>
     <script type="module" src="./scripts/main.js"></script>
   </body>

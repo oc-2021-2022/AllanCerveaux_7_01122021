@@ -1,5 +1,7 @@
-.column .card {
- .media-left {
-    width: 40%;
-  }
+.card-sizing {
+  height: 500px;
+}
+
+.col-4 .card .card-body {
+  text-overflow: ellipsis;
 }
