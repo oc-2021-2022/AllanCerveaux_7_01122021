@@ -1,6 +1,6 @@
-export const CardTemplate = ({ name, image = 'https://via.placeholder.com/150', ingredients, time, description }) => {
+export const CardTemplate = ({ id,name, image = 'https://via.placeholder.com/150', ingredients, time, description }) => {
     return /* html */`
-      <article class="col-4 my-3">
+      <article class="col-4 my-3" data-id="${id}">
         <div class="card">
           <img class="card-img-top" src="${image}" alt="${name}" />
           <div class="card-body flex-grow-0">
