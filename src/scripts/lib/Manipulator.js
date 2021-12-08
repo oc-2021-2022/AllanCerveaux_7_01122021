@@ -11,8 +11,12 @@
     this.elementDefaultDisplay = null
   }
 
-  selector (elm) {
-    if (elm.includes('.')) {
+   selector(elm) {
+    if (typeof elm === 'object') {
+      this.setElement(elm)
+      return this
+    }
+    else if (elm.includes('.')) {
       this.setElement(document.querySelectorAll(elm))
       return this
     }
@@ -124,7 +128,7 @@
     this.element.classList.toggle(arg)
   }
 
-  getAttribute (key) {
+  getAttribute(key) {
     return this.element.getAttribute(key)
   }
 
