@@ -13,7 +13,7 @@
 ## Test de scénario :mechanical_arm:
 
 ### Sénario Alternatif 1
-[JSBENCH](https://jsben.ch/g7sod)
+[JSBENCH](https://jsben.ch/laYK8)
 
 ## Requirement 🧰 
 ___
