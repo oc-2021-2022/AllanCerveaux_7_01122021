@@ -1,25 +1,10 @@
 $primary-color: #d04f4f;
 
 // Import Default
-@import './base/default';
+@import './base/default', './helpers/variables';
 
 // Import Component
 @import './components/card', './components/badge';
 
-.placeholder-white::placeholder {
-  color: $white;
-}
-
-.bg-orange {
-  background-color: #ed6454;
-}
-
-.bg-green {
-  background-color: #68d9a4;
-}
-
-main > .section.card-list {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-}
+// custom
+@import './custom';
