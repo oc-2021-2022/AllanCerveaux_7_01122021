@@ -9,7 +9,7 @@ export const search_by_name = (term) => recipes.filter(({ name }) => {
 
 
 export const search_by_ingredient = (term) => recipes
-  .filter(({ingredients}) => {
+  .filter(({ ingredients }) => {
     const result = ingredients.filter(({ ingredient }) => {
       if (first_letter_checker(ingredient, term)) {
         return ingredient.toLowerCase().includes(term)

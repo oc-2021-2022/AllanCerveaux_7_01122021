@@ -21,7 +21,7 @@ export class Search {
     let alert
     let result = []
     if (!term.length) result = recipes
-    result.push(...this.search_service.search_by_name(term), ...functional.search_by_ingredient(term))
+    result.push(...this.search_service.search_by_name(term), ...this.search_service.search_by_ingredient(term))
     if (result.length < 1) {
       alert = new Alert('warning', 'Aucune recette ne correspond à votre critère... vous pouvez chercher « tarte aux pommes », « poisson », etc...')
       this.error = {
