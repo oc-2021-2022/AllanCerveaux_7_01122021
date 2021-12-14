@@ -6,7 +6,7 @@ export const CardTemplate = ({ id,name, image = 'https://via.placeholder.com/150
           <div class="card-body flex-grow-0">
             <div class="row">
               <h2 class="card-title fs-5 col text-nowrap overflow-hidden">${name}</h2>
-              <span class="card-text col-3"><strong>${time}</strong> <i class="far fa-clock"></i></span>
+              <span class="card-text col-3"><i class="far fa-clock"></i> <strong>${time} min</strong></span>
             </div>
           </div>
           <div class="card-body overflow-hidden flex-grow-1">
