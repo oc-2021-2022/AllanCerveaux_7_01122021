@@ -35,7 +35,8 @@
     return this
   }
 
-  text (text) {
+  text(text) {
+    if(text.length) return this.element.innerText
     this.element.innerText = text
     return this
   }
@@ -177,6 +178,11 @@
 
   submit (handler) {
     this.element.addEventListener('submit', (event) => handler(event))
+    return this
+  }
+   
+  value(payload) {
+    this.element.value = payload
     return this
   }
 }

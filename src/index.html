@@ -36,58 +36,49 @@
           <i class="fas fa-search"></i>
         </span>
       </div>
-      <section class="tags mb-2 mt-2">
-        <div class="badge bg-primary p-2">
-          tag-test
-          <span class="badge"><i class="fas fa-times"></i></span>
-        </div>
-        <div class="badge bg-primary p-2">
-          tag-test
-          <span class="badge"><i class="fas fa-times"></i></span>
-        </div>
-      </section>
+      <section id="tag-list" class="tags mb-2 mt-2"></section>
       <section class="row">
         <div class="col-2">
           <div class="input-group border-0">
             <input
               class="form-control border-end-0 bg-primary placeholder-white text-white border-0 p-3"
-              list="datalistIngredientOptions"
-              id="inputIngredient"
+              list="datalist-ingredient"
+              id="input-ingredient"
               placeholder="Ingrédient"
             />
             <span class="input-group-text bg-primary text-white border-0 p-3 m-0">
               <i class="fas fa-chevron-down"></i>
             </span>
           </div>
-          <datalist id="datalistIngredientOptions"></datalist>
+          <datalist id="datalist-ingredient"></datalist>
         </div>
         <div class="col-2">
           <div class="input-group border-0">
             <input
               class="form-control border-end-0 bg-green placeholder-white text-white border-0 p-3"
-              list="datalistKitchenApplianceOptions"
-              id="inputKitchenAppliance"
+              list="datalist-appliance"
+              id="input-appliance"
               placeholder="Appareil"
             />
             <span class="input-group-text bg-green text-white border-0 p-3 m-0">
               <i class="fas fa-chevron-down"></i>
             </span>
           </div>
-          <datalist id="datalistKitchenApplianceOptions"></datalist>
+          <datalist id="datalist-appliance"></datalist>
         </div>
         <div class="col-2">
           <div class="input-group border-0">
             <input
               class="form-control border-end-0 bg-orange placeholder-white text-white border-0 p-3"
-              list="datalistUstensilOptions"
-              id="inputUstensil"
+              list="datalist-ustensil"
+              id="input-ustensil"
               placeholder="Ustensiles"
             />
             <span class="input-group-text bg-orange text-white border-0 p-3 m-0">
               <i class="fas fa-chevron-down"></i>
             </span>
           </div>
-          <datalist id="datalistUstensilOptions"></datalist>
+          <datalist id="datalist-ustensil"></datalist>
         </div>
       </section>
     </header>

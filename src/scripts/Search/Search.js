@@ -22,10 +22,10 @@ export class Search {
     let result = []
     if (!term.length) result = recipes
     result.push(
-      ...this.search_service.search_by_name(term),
-      ...this.search_service.search_by_ingredient(term),
-      ...this.search_service.search_by_ustensil(term),
-      ...this.search_service.search_by_appliance(term)
+      ...this.search_service.search_by_name(recipes, term),
+      ...this.search_service.search_by_ingredient(recipes, term),
+      ...this.search_service.search_by_ustensil(recipes, term),
+      ...this.search_service.search_by_appliance(recipes, term)
     )
     if (result.length < 1) {
       alert = new Alert('warning', 'Aucune recette ne correspond à votre critère... vous pouvez chercher « tarte aux pommes », « poisson », etc...')
@@ -41,5 +41,9 @@ export class Search {
       }
     }
     return result 
+  }
+
+  addIngredient(arr, term) {
+    return this.search_service.search_by_ingredient(arr, term)
   }
 }

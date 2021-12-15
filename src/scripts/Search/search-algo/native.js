@@ -1,9 +1,8 @@
-import { recipes } from '../../../resources/data/recipes.json';
 
-export const search_by_name = (term) => {
+export const search_by_name = (arr, term) => {
   const result = []
-  for (let i = 0; i < recipes.length; i++) {
-    const recipe = recipes[i];
+  for (let i = 0; i < arr.length; i++) {
+    const recipe = arr[i];
     if (recipe.hasOwnProperty('name')) {
       if (recipe.name.toLocaleLowerCase().includes(term)) {
         result.push(recipe)
@@ -13,12 +12,12 @@ export const search_by_name = (term) => {
   return result
 }
 
-export const search_by_ingredient = (term) => {
+export const search_by_ingredient = (arr, term) => {
   const result = []
-  for (let i = 0; i < recipes.length; i++) {
-    const recipe = recipes[i];
+  for (let i = 0; i < arr.length; i++) {
+    const recipe = arr[i];
     if (recipe.hasOwnProperty('ingredients')) {
-      const ingredients = recipes[i].ingredients
+      const ingredients = arr[i].ingredients
       for (const key in ingredients) {
         const ingredient = ingredients[key];
         if (ingredient.hasOwnProperty('ingredient')) {
@@ -32,10 +31,10 @@ export const search_by_ingredient = (term) => {
   return result
 }
 
-export const search_by_ustensil = (term) => {
+export const search_by_ustensil = (arr, term) => {
   const result = []
-  for (let i = 0; i < recipes.length; i++) {
-    const recipe = recipes[i];
+  for (let i = 0; i < arr.length; i++) {
+    const recipe = arr[i];
     if (recipe.hasOwnProperty('ustensils')) {
       if (recipe.ustensils.includes(term)) {
         result.push(recipe)
@@ -45,10 +44,10 @@ export const search_by_ustensil = (term) => {
   return result
 }
 
-export const search_by_appliance = (term) => {
+export const search_by_appliance = (arr, term) => {
   const result = []
-  for (let i = 0; i < recipes.length; i++) {
-    const recipe = recipes[i];
+  for (let i = 0; i < arr.length; i++) {
+    const recipe = arr[i];
     if (recipe.hasOwnProperty('appliance')) {
       if (recipe.appliance.toLowerCase().includes(term)) {
         result.push(recipe)
