@@ -21,7 +21,7 @@
         },
         {
           "ingredient": "Sucre",
-          "quantite": 30,
+          "quantity": 30,
           "unit": "grammes"
         },
         {
@@ -32,7 +32,7 @@
       "description": "Mettre les glaçons à votre goût dans le blender, ajouter le lait, la crème de coco, le jus de 2 citrons et le sucre. Mixer jusqu'à avoir la consistence désirée",
       "appliance": "Blender",
       "ustensils": [
-        "cuillère à Soupe",
+        "cuillère à soupe",
         "verres",
         "presse citron"
       ]
@@ -57,14 +57,14 @@
         },
         {
           "ingredient": "Carotte",
-          "quantite": 1
+          "quantity": 1
         },
         {
           "ingredient": "Citron Vert",
           "quantity": 5
         },
         {
-          "ingredient": "Lait de Coco",
+          "ingredient": "Lait de coco",
           "quantity": 100,
           "unit": "ml"
         }
@@ -182,7 +182,7 @@
           "unit": "cuillères à soupe"
         },
         {
-          "ingredient": "gruyère râpé",
+          "ingredient": "Gruyère râpé",
           "quantity": 100,
           "unit": "grammes"
         },
@@ -310,7 +310,7 @@
           "unit": "grammes"
         },
         {
-          "ingredient": "farine",
+          "ingredient": "Farine",
           "quantity": 90,
           "unit": "grammes"
         }
@@ -394,7 +394,7 @@
       "ustensils": [
         "plat à gratin",
         "couteau",
-        "Économe"
+        "économe"
       ]
     },
     {
@@ -466,7 +466,7 @@
       ],
       "time": 40,
       "description": "Éplucher les fruits et les couper en morceaux, les mettre dans une casserolle en ajoutant l'eau et le sucre vanillé. Laisser cuire 15 minutes en remuant régulièrement.",
-      "appliance": "Casserole",
+      "appliance": "Casserolle",
       "ustensils": [
         "couteau",
         "économe"
@@ -497,14 +497,14 @@
           "unit": "cuillère à soupe"
         },
         {
-          "ingredient": "huile d'olive",
+          "ingredient": "Huile d'olive",
           "quantity": 2,
           "unit": "cuillère à soupe"
         }
       ],
       "time": 40,
       "description": "Cuire les pommes de terre environ 30 minutes. Découper les échalottes finement. Durant la cuisson des pommes de terre. Préparez la vinaigrette avec l'huile d'olive et le vinaigre de cidre. Salez poivrez à discrétion. Dans un saladier, mettre le mâche. Ajouter",
-      "appliance": "Casserole",
+      "appliance": "Casserolle",
       "ustensils": [
         "couteau",
         "saladier",
@@ -621,7 +621,7 @@
           "unit": "tiges"
         },
         {
-          "ingredient": "huile d'olives",
+          "ingredient": "Huile d'olive",
           "quantity": 2,
           "unit": "cuillère à soupe"
         }
@@ -762,7 +762,7 @@
           "unit": "grammes"
         },
         {
-          "ingredient": "huile d'olive",
+          "ingredient": "Huile d'olive",
           "quantity": 1,
           "unit": "cuillères à soupe"
         }
@@ -805,16 +805,16 @@
           "unit": "cl"
         },
         {
-          "ingredient": "Crème Fraiche",
+          "ingredient": "Crème fraiche",
           "quantity": 1,
           "unit": "cuillères à soupe"
         }
       ],
       "time": 30,
       "description": "Cuisiner la viande hachée dans une poelle à frire. Dans une autre faire cuire les oignons découpés en fins dés avec un peu de beurre. Ajouter du vin rouge. Mélanger les oigons avec la viande hachée. Faire cuire les pates le temps indiqué sur le paquet. Ajouter le coulis de tomates à la viande hachée. Une fois que les pates sont cuites, ajouter la crème fraiche à la viande hachée. Serivir.",
-      "appliance": "Casserolle.",
+      "appliance": "Casserolle",
       "ustensils": [
-        "Cuillère en bois",
+        "cuillère en bois",
         "louche",
         "couteau"
       ]
@@ -883,7 +883,7 @@
           "quantity": 3
         },
         {
-          "ingredient": "Crème Fraîche",
+          "ingredient": "Crème fraîche",
           "quantity": 20,
           "unit": "cl"
         },
@@ -1187,7 +1187,7 @@
       "description": "Découper en cubes les carottes et pommes de terre. Faire revenir dans du beurre. Ajouter les lardons, une fois les lardons dorés, ajouter un grand verre d'eau. Ajouter les petit poids et les haricots verts ( tous deux pré cuits ). Ajouter Sel, poivre, thyms et laurier",
       "appliance": "Poële",
       "ustensils": [
-        "Couteau",
+        "couteau",
         "économe"
       ]
     },
@@ -1432,7 +1432,7 @@
       "ustensils": [
         "couteau",
         "cuillère en bois",
-        "Poelle à frire"
+        "poelle à frire"
       ]
     },
     {
@@ -1466,7 +1466,7 @@
       "ustensils": [
         "fouet",
         "bol",
-        "Cuillère à Soupe"
+        "cuillère à soupe"
       ]
     },
     {
@@ -1518,7 +1518,7 @@
           "quantity": 3
         },
         {
-          "ingredient": "Sucre en poudre",
+          "ingredient": "Sucre en Poudre",
           "quantity": 4,
           "unit": "cuillères à café"
         },
@@ -1660,7 +1660,7 @@
           "unit": "grammes"
         },
         {
-          "ingredient": "farine",
+          "ingredient": "Farine",
           "quantity": 40,
           "unit": "grammes"
         }
@@ -1770,7 +1770,7 @@
           "unit": "grammes"
         },
         {
-          "ingredient": "Crème Fraîche",
+          "ingredient": "Crème fraîche",
           "quantity": 20,
           "unit": "cl"
         }
