@@ -181,7 +181,8 @@
     return this
   }
    
-  value(payload) {
+   value(payload = null) {
+    if(!!this.element.value.length && payload === null) return this.element.value
     this.element.value = payload
     return this
   }
