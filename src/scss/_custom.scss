@@ -17,3 +17,17 @@
 .hide {
   display: none;
 }
+
+.input-group {
+  .form-control.bg-green {
+    &:focus {
+      background-color: $green;
+    }
+  }
+
+  .form-control.bg-orange {
+    &:focus {
+      background-color: $orange;
+    }
+  }
+}
