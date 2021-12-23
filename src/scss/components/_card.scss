@@ -1,9 +1,9 @@
-.col-4 .card {
+.recipe .card {
   height: 100%;
-  background-color: #E7E7E7;
+  background-color: #e7e7e7;
   .card-img-top {
     height: 150px;
-    background-color: #C7BEBE
+    background-color: #c7bebe;
   }
   .card-body {
     .card-title {
@@ -13,7 +13,7 @@
       font-size: 0.7em;
     }
     p {
-      overflow:hidden;
+      overflow: hidden;
       line-height: 1.5rem;
       max-height: 10.5rem;
       -webkit-box-orient: vertical;

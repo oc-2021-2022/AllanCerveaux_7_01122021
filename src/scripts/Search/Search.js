@@ -17,15 +17,16 @@ export class Search {
     }
   }
 
-  searchByterm(term) {
+  searchByterm(term, arr = []) {
     let alert
     let result = []
+    const searched_array = arr.length ? arr : recipes
     if (!term.length) result = recipes
     result.push(
-      ...this.search_service.search_by_name(recipes, term),
-      ...this.search_service.search_by_ingredient(recipes, term),
-      ...this.search_service.search_by_ustensil(recipes, term),
-      ...this.search_service.search_by_appliance(recipes, term)
+      ...this.search_service.search_by_name(searched_array, term),
+      ...this.search_service.search_by_ingredient(searched_array, term),
+      ...this.search_service.search_by_ustensil(searched_array, term),
+      ...this.search_service.search_by_appliance(searched_array, term)
     )
     if (result.length < 1) {
       alert = new Alert('warning', 'Aucune recette ne correspond à votre critère... vous pouvez chercher « tarte aux pommes », « poisson », etc...')
@@ -43,7 +44,9 @@ export class Search {
     return result 
   }
 
-  addIngredient(arr, term) {
-    return this.search_service.search_by_ingredient(arr, term)
+  searchByTag(type, arr, terms) {
+    if (type === 'ingredient' && terms.length) return this.search_service.search_by_ingredient(arr, terms)
+    else if (type === 'appliance' && terms.length) return this.search_service.search_by_appliance(arr, terms)
+    else if (type === 'ustensil' && terms.length) return this.search_service.search_by_ustensil(arr, terms)
   }
 }

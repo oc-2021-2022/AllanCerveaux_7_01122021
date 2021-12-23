@@ -3,7 +3,6 @@ import { compare } from '../../lib/helpers/compare'
 export const search_by_name = (arr, term) => arr.filter(({ name }) => name.toLowerCase().includes(term.toLowerCase()))
 
 export const search_by_ingredient = (arr, term) => arr.filter(({ ingredients }) => {
-  let result = []
   if (Array.isArray(term)) return ingredients.includes(...compare(term, ingredients))
   return ingredients.includes(...ingredients.filter(({ ingredient }) => ingredient.toLowerCase().includes(term.toLowerCase())))
 })

@@ -1,6 +1,6 @@
 export const CardTemplate = ({ id,name, image = 'https://via.placeholder.com/150', ingredients, time, description, ustensils, appliance }) => {
     return /* html */`
-      <article class="recipe col-4 my-3" data-id="${id}">
+      <article class="recipe col-sm-6 col-lg-4 col-xs-6 my-3" data-id="${id}">
         <div class="card">
           <img class="card-img-top" src="${image}" alt="${name} - ${ustensils.join(',')} - ${appliance}" />
           <div class="card-body flex-grow-0">
