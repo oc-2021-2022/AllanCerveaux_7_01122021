@@ -7,7 +7,7 @@
   "scripts": {
     "start": "parcel src/index.html --open",
     "prebuild": "npx rimraf build",
-    "build": "parcel build --public-url ./ ./src/index.html --experimental-scope-hoisting --out-dir build"
+    "build": "parcel build --public-url ./ ./src/index.html"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "2.0.0-rc.0",
