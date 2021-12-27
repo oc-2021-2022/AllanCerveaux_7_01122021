@@ -1,7 +1,7 @@
 import { recipes } from '../resources/data/recipes.json';
 import { Manipulator } from './lib/Manipulator';
 import { Search } from './Search';
-import { generateTag } from './Tag/generate-tag';
+import { generateTag } from './Tag/';
 import { CardTemplate, TagTemplate } from './templates';
 
 
@@ -20,7 +20,6 @@ $('#search_term')
   .value('')
   .on('input', ({ target }) => {
     if (!target.value && tagList.length) {
-      console.log('here')
       tagList.forEach(({ type, terms }) => {
         result = search.searchByTag(type, recipes, terms)
       })
@@ -64,6 +63,7 @@ $('.input-tag')
       }
 
       tagList.forEach(({ type, terms }) => {
+        console.log(result)
         if (result.length) {
           result = search.searchByTag(type, result, terms)
         } else {
@@ -97,8 +97,6 @@ $('.input-tag')
 
 
 const updateRender = (result = [], timeout = 0) => {
-  if (!result.length) result = recipes
-
   generateTag(['ingredient', 'ustensil', 'appliance'], result)
   setTimeout(() => {  
     const result_id = result.map(({ id }) => id.toString())
