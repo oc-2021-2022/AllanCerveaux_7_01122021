@@ -1,3 +1,4 @@
+import { compare } from '../../lib/helpers/compare';
 
 export const search_by_name = (arr, term) => {
   const result = []
@@ -18,11 +19,17 @@ export const search_by_ingredient = (arr, term) => {
     const recipe = arr[i];
     if (recipe.hasOwnProperty('ingredients')) {
       const ingredients = arr[i].ingredients
-      for (const key in ingredients) {
-        const ingredient = ingredients[key];
-        if (ingredient.hasOwnProperty('ingredient')) {
-          if (ingredient.ingredient.toLowerCase().includes(term.toLocaleLowerCase())) {
-            result.push(recipe)
+      if (Array.isArray(term)) {
+        if (ingredients.includes(...compare(term, ingredients))) {
+          result.push(recipe)
+        }
+      } else {
+        for (const key in ingredients) {
+          const ingredient = ingredients[key];
+          if (ingredient.hasOwnProperty('ingredient')) {
+            if (ingredient.ingredient.toLowerCase().includes(term.toLocaleLowerCase())) {
+              result.push(recipe)
+            }
           }
         }
       }
@@ -36,8 +43,14 @@ export const search_by_ustensil = (arr, term) => {
   for (let i = 0; i < arr.length; i++) {
     const recipe = arr[i];
     if (recipe.hasOwnProperty('ustensils')) {
-      if (recipe.ustensils.includes(term)) {
-        result.push(recipe)
+      if (Array.isArray(term)) {
+        if (recipe.ustensils.includes(...compare(term, recipe.ustensils))) {
+          result.push(recipe)
+        }
+      } else {
+        if (recipe.ustensils.includes(term)) {
+          result.push(recipe)
+        }
       }
     }
   }
@@ -49,7 +62,7 @@ export const search_by_appliance = (arr, term) => {
   for (let i = 0; i < arr.length; i++) {
     const recipe = arr[i];
     if (recipe.hasOwnProperty('appliance')) {
-      if (recipe.appliance.toLowerCase().includes(term)) {
+      if (recipe.appliance.toLowerCase().includes(term) || recipe.appliance.includes(term)) {
         result.push(recipe)
       }
     }
