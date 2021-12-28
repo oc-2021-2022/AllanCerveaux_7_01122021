@@ -18,13 +18,13 @@ const optionList = (type, arr) => {
     const ingredients = arr
       .map(({ ingredients }) => ingredients)
       .flat()
-      .map(({ ingredient }) => ingredient.normalize("NFD").replace(/[\u0300-\u036f]/g, ""))
+      .map(({ ingredient }) => ingredient)
       .sort()
     return ingredients.filter((ingredient, index) => ingredients.indexOf(ingredient) === index)
   }
   else if (type === 'appliance') {
     const appliances = arr
-      .map(({ appliance }) => appliance.normalize("NFD").replace(/[\u0300-\u036f]/g, ""))
+      .map(({ appliance }) => appliance)
       .sort()
     return appliances.filter((appliance, index) => appliances.indexOf(appliance) === index)
   }
