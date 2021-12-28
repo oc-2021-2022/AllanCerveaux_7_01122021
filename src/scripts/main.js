@@ -43,7 +43,6 @@ $('.input-tag')
   .on('input', ({ target, inputType, data }) => {
     if (inputType === 'insertReplacementText') {
       const type = target.id.split('-').pop()
-
       $('#tag-list').append(TagTemplate(data, type))
       target.value = ''
 
@@ -64,14 +63,16 @@ $('.input-tag')
           terms: [data]
         })
       }
-
-      tagList.forEach(({ type, terms }) => {
-        if (result.length) {
-          result = search.searchByTag(type, result, terms)
-        } else {
-          result = search.searchByTag(type, recipes, terms)
+      
+      tagList.forEach((tag) => {
+        if (tag.terms.length) {
+          if (result.length) {
+            result = search.searchByTag(tag.type, result, tag.terms)
+          } else {
+            result = search.searchByTag(tag.type, recipes, tag.terms)
+          }
+          updateRender(result)
         }
-        updateRender(result)
       })
 
       $('.close')
@@ -86,13 +87,11 @@ $('.input-tag')
             if (tag.terms.length > 0) {
               result = search.searchByTag(tag.type, recipes, tag.terms)
             }
-            console.log('remove tag', result)
           })
           if (!tagList.map(({ terms }) => terms).flat().length) {
             if($('#search_term').element.value) result = search.searchByterm($('#search_term').element.value)
             else result = recipes
           }
-
           if (document.getElementById('tag-list') === null) {
             const tagListElm = document.createElement('section')
             tagListElm.id = 'tag-list'
