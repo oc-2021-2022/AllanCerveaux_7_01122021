@@ -21,7 +21,9 @@ export class Search {
     let alert
     let result = []
     const searched_array = arr.length ? arr : recipes
+
     if (!term.length) result = recipes
+
     result.push(
       ...this.search_service.search_by_name(searched_array, term),
       ...this.search_service.search_by_ingredient(searched_array, term),
@@ -41,6 +43,7 @@ export class Search {
         alert: null
       }
     }
+
     return result 
   }
 
