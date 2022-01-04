@@ -13,7 +13,6 @@ export class Alert {
   }
 
   display(parent) {
-    console.log(parent, document.getElementById('search-alert'))
     if(document.getElementById('search-alert') === null) parent.append(this.template())
   }
 
