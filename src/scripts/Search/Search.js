@@ -1,5 +1,5 @@
 import { recipes } from '../../resources/data/recipes.json'
-import { Alert } from '../Alert'
+import { Alert } from '../component/alert'
 import * as functional from './search-algo/functional'
 import * as native from './search-algo/native'
 

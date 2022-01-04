@@ -24,7 +24,7 @@ $datalist-width: 30%;
       text-align: center;
       &:hover {
         cursor: pointer;
-        color: $gray-500;
+        text-decoration: underline;
       }
     }
   }

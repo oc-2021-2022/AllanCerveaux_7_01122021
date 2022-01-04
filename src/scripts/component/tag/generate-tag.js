@@ -1,5 +1,5 @@
-import { recipes } from '../../resources/data/recipes.json';
-import { Manipulator } from '../lib/Manipulator';
+import { recipes } from '../../../resources/data/recipes.json';
+import { Manipulator } from '../../lib/Manipulator';
 
 const manipulator = new Manipulator() 
 const $ = (elm) => manipulator.selector(elm)
@@ -8,12 +8,12 @@ export const generateTag = (types, arr = recipes) => types
   .forEach(type =>
     $(`#datalist-${type}`)
       .html(
-        optionList(type, arr).map(ingredient => /* html */`<span class="item ${type}">${ingredient}</span>`).join('')
+        optionList(type, arr).map(value => /* html */`<span class="item ${type}">${value}</span>`).join('')
       )
   )
 
 
-const optionList = (type, arr) => {
+export const optionList = (type, arr) => {
   if (type === 'ingredient') {
     const ingredients = arr
       .map(({ ingredients }) => ingredients)
@@ -38,4 +38,12 @@ const optionList = (type, arr) => {
   }
 }
 
-
+export function hideItem(arr) {
+  ['ingredient', 'ustensil', 'appliance'].forEach(type => {
+    $(`#datalist-${type} > span.item`).each(item => {
+      console.log($(item).text())
+      if (!optionList(type, arr).includes($(item).text())) $(item).hide()
+      else $(item).show()
+    })
+  })
+}

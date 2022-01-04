@@ -65,8 +65,8 @@
    * @return {Manipulator | string} 
    * @memberof Manipulator
    */
-  text(text) {
-    if(text.length) return this.element.innerText
+  text(text = '') {
+    if(text.length < 1) return this.element.innerText
     this.element.innerText = text
     return this
   }
@@ -397,5 +397,9 @@
     if (!this.element.value.length && payload === null) return this.element.value
     this.element.value = payload
     return this
+  }
+   
+  toArray() {
+    if(this.element.length) return Array.from(this.element)
   }
 }
