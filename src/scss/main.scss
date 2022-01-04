@@ -4,7 +4,7 @@ $primary-color: #d04f4f;
 @import './base/default', './helpers/variables';
 
 // Import Component
-@import './components/card', './components/badge';
+@import './components/card', './components/badge', './components/custom-datalist';
 
 // custom
 @import './custom';
