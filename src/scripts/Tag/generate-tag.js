@@ -8,7 +8,7 @@ export const generateTag = (types, arr = recipes) => types
   .forEach(type =>
     $(`#datalist-${type}`)
       .html(
-        optionList(type, arr).map(ingredient => /* html */`<option class="${type}" value="${ingredient}">`).join('')
+        optionList(type, arr).map(ingredient => /* html */`<span class="item ${type}">${ingredient}</span>`).join('')
       )
   )
 
