@@ -12,9 +12,11 @@
 
 ## Test de scénario :mechanical_arm:
 
-### Sénario Alternatif 1
-[JSBENCH](https://jsben.ch/laYK8)
-
+### Recherche :
+- [Nom](https://jsben.ch/oA4ZC)
+- [Ingredients](https://jsben.ch/OTU83)
+- [Ustensils](https://jsben.ch/KIqp3)
+- [Appareils](https://jsben.ch/C2tCp)
 ## Requirement 🧰 
 ___
 - node : `10.X>`
