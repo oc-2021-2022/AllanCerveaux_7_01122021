@@ -1,6 +1,6 @@
 import { recipes } from '../resources/data/recipes.json';
 import { inputTag } from './component/datalist';
-import { generateTag, hideItem } from './component/tag/generate-tag';
+import { generateTag, toggleItem } from './component/tag/generate-tag';
 import { Manipulator } from './lib/Manipulator';
 import { Search } from './Search';
 import { CardTemplate, TagTemplate } from './templates';
@@ -19,7 +19,7 @@ recipes.forEach(recipe => $('#recipe-list').append(CardTemplate(recipe)))
 $('#search_term')
   .value('')
   .on('input', ({ target }) => {
-    if (!target.value && !tagList.map(({ terms }) => terms).flat().length) {
+    if (!target.value && !!tagList.map(({ terms }) => terms).flat().length) {
       tagList.forEach(({ type, terms }) => {
         result = search.searchByTag(type, recipes, terms)
       })
@@ -110,7 +110,7 @@ $('.item')
   })
 
 const updateRender = (result = [], timeout = 0) => {
-  hideItem(result)
+  toggleItem(result)
   setTimeout(() => {  
     const result_id = result.map(({ id }) => id.toString())
     $('.recipe').each(recipe => {
