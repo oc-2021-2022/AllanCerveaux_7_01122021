@@ -38,12 +38,11 @@ export const optionList = (type, arr) => {
   }
 }
 
-export function hideItem(arr) {
+export function toggleItem(arr) {
   ['ingredient', 'ustensil', 'appliance'].forEach(type => {
     $(`#datalist-${type} > span.item`).each(item => {
-      console.log($(item).text())
       if (!optionList(type, arr).includes($(item).text())) $(item).hide()
-      else $(item).show()
+      else item.style.display = 'inline'
     })
   })
 }
