@@ -23,14 +23,12 @@ $('#search_term')
       tagList.forEach(({ type, terms }) => {
         result = search.searchByTag(type, recipes, terms)
       })
-    } else {
-      if (result.length) {
+    } else if (result.length) {
         result = search.searchByterm(target.value, result)
-      }
-      else {
-        result = search.searchByterm(target.value)
-      }
+    } else {
+      result = search.searchByterm(target.value)
     }
+    
     updateRender(result, 200)
     
     if (search.error.value) {
