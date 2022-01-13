@@ -19,8 +19,7 @@ recipes.forEach(recipe => $('#recipe-list').append(CardTemplate(recipe)))
 $('#search_term')
   .value('')
   .on('input', ({ target }) => {
-    console.log(!target.value, !!tagList.map(({terms}) => terms).length)
-    if (!target.value && !!tagList.map(({terms}) => terms).length) {
+    if (!target.value && !!tagList.map(({terms}) => terms).flat().length) {
       let newResult = recipes
       tagList.forEach(({ type, terms }) => {
         newResult = search.searchByTag(type, newResult, terms)
@@ -31,9 +30,10 @@ $('#search_term')
       let newResult = search.searchByterm(target.value, result)
       result = newResult
     } else {
-      result = search.searchByterm(target.value)    
+      let newResult = search.searchByterm(target.value)
+      result = newResult
     }
-    
+
     updateRender(result, 200)
     
     if (search.error.value) {
@@ -93,13 +93,13 @@ $('.item')
 
         tagList.forEach((tag) => {
           if (tag.type === parent.getAttribute('data-type')) {
-            tag.terms = tag.terms.filter((term, index) => tag.terms.indexOf(parent.element.innerText.trim()) !== index)
+            tag.terms = tag.terms.filter((_, index) => tag.terms.indexOf(parent.text().trim()) !== index)
           }
           if (tag.terms.length > 0) {
             result = search.searchByTag(tag.type, recipes, tag.terms)
           }
         })
-        if (!tagList.map(({ terms }) => terms).flat().length) {
+        if (tagList.map(({ terms }) => terms).flat().length < 1) {
           if($('#search_term').element.value) result = search.searchByterm($('#search_term').element.value)
           else result = recipes
         }
@@ -116,8 +116,8 @@ $('.item')
 
 const updateRender = (result = [], timeout = 0) => {
   toggleItem(result)
+  const result_id = result.map(({ id }) => id.toString())
   setTimeout(() => {  
-    const result_id = result.map(({ id }) => id.toString())
     $('.recipe').each(recipe => {
       if (search.error) recipe.style.display = 'none'
       if (!result_id.includes($(recipe).getAttribute('data-id'))) {
