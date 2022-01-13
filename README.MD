@@ -10,6 +10,10 @@
 
 🥘 [Les petit plats](https://oc-2021-2022.github.io/AllanCerveaux_7_01122021/) 📃 est un site web qui permet de rechercher des recettes de cuisines à travers un base de données riche.
 
+## Versions
+- [Boucle Native](http://les-petit-plat-native.surge.sh/)
+- [Boucle Fonctionnel](https://oc-2021-2022.github.io/AllanCerveaux_7_01122021/)
+
 ## Test de scénario :mechanical_arm:
 
 ### Recherche :
@@ -50,4 +54,6 @@ Voir `LICENCE` pour plus d'informations.
 ___
 [@CerveauxAllan]("https://twitter.com/CerveauxAllan") - [cerveauxallanjean@gmail.com]("cerveauxallanjean@gmail.com")
 
-Liens du projet: [https://oc-2021-2022.github.io/AllanCerveaux_7_01122021](https://oc-2021-2022.github.io/AllanCerveaux_7_01122021/)
+Liens du projet:
+- [Functional algo version](https://oc-2021-2022.github.io/AllanCerveaux_7_01122021/)
+- [Native algo version](http://les-petit-plat-native.surge.sh/)

@@ -25,7 +25,7 @@ $('#search_term')
       })
     } else if (result.length) {
         result = search.searchByterm(target.value, result)
-    }  else {
+    } else {
       result = search.searchByterm(target.value)
     }
     

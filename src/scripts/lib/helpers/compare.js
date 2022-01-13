@@ -1,3 +1,11 @@
+/**
+ * Check id previous value exist in array
+ *
+ * @export
+ * @param {string} terms
+ * @param {string[]} arr
+ * @return {string[]} 
+ */
 export function compare(terms, arr) {
   let result
   let previousValue = null

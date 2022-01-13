@@ -31,3 +31,10 @@
     }
   }
 }
+
+.recipe-container {
+  margin-top: 4em;
+  @media screen and (max-width: 375px) {
+    margin-top: 12em;
+  }
+}

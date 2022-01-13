@@ -22,7 +22,7 @@ export function focus({target}) {
 
 export function input({target}) {
   const type = target.id.split('-').pop()
-  const items = $(`#datalist-${type}>span.item`)  
+  const items = $(`#datalist-${type}>.item`)  
   items.each(item => {
     if (!item.innerText.toLowerCase().includes(target.value)) {
       item.style.display = 'none'

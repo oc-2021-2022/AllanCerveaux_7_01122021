@@ -37,8 +37,8 @@
         </span>
       </div>
       <section id="tag-list" class="tags mb-2 mt-2"></section>
-      <section class="row">
-        <div class="col-4 col-sm-4 col-lg-2 custom-datalist">
+      <section class="row datalist-container position-absolute">
+        <div class="col-12 my-1 col-sm-4 col-lg-2 custom-datalist">
           <div class="input-group border-0">
             <input
               class="form-control border-end-0 bg-primary placeholder-white text-white border-0 p-3 input-tag"
@@ -50,9 +50,9 @@
               <i class="fas fa-chevron-down"></i>
             </span>
           </div>
-          <div id="datalist-ingredient" class="bg-primary datalist datalist-close"></div>
+          <ul id="datalist-ingredient" class="bg-primary datalist datalist-close"></ul>
         </div>
-        <div class="col-4 col-sm-4 col-lg-2 custom-datalist">
+        <div class="col-12 my-1 col-sm-4 col-lg-2 custom-datalist">
           <div class="input-group border-0">
             <input
               class="form-control bg-green border-end-0 placeholder-white text-white border-0 p-3 input-tag"
@@ -64,10 +64,9 @@
               <i class="fas fa-chevron-down"></i>
             </span>
           </div>
-          <div id="datalist-appliance" class="bg-green datalist datalist-close"></div>
-          <!-- <datalist id="datalist-appliance"></datalist> -->
+          <ul id="datalist-appliance" class="bg-green datalist datalist-close"></ul>
         </div>
-        <div class="col-4 col-sm-4 col-lg-2 custom-datalist">
+        <div class="col-12 my-1 col-sm-4 col-lg-2 custom-datalist">
           <div class="input-group border-0">
             <input
               class="form-control border-end-0 bg-orange placeholder-white text-white border-0 p-3 input-tag"
@@ -79,12 +78,11 @@
               <i class="fas fa-chevron-down"></i>
             </span>
           </div>
-          <div id="datalist-ustensil" class="bg-orange datalist datalist-close"></div>
-          <!-- <datalist id="datalist-ustensil"></datalist> -->
+          <ul id="datalist-ustensil" class="bg-orange datalist datalist-close"></ul>
         </div>
       </section>
     </header>
-    <main class="container mt-4">
+    <main class="container recipe-container">
       <section class="row" id="recipe-list"></section>
     </main>
     <script type="module" src="./scripts/main.js"></script>
