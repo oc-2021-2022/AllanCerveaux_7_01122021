@@ -1,6 +1,9 @@
 .datalist-container {
   z-index: 100;
-  width: 89vw;
+  width: 50vw;
+  @media screen and (max-width: 1440px) {
+    width: 89vw;
+  }
   @media screen and (max-width: 375px) {
     width: 100vw;
   }
@@ -12,7 +15,10 @@
     & > div.input-group > .input-group-text {
       border-radius: 0.25rem 0.25rem 0 0;
     }
-    width: 40vw;
+    width: 30vw;
+    @media screen and (max-width: 1440px) {
+      width: 40vw;
+    }
     @media screen and (max-width: 1024px) {
       width: 90vw;
     }
