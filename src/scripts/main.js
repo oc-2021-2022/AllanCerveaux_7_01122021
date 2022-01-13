@@ -5,7 +5,7 @@ import { Manipulator } from './lib/Manipulator';
 import { Search } from './Search';
 import { CardTemplate, TagTemplate } from './templates';
 
-const search = new Search('native')
+const search = new Search('functional')
 const manipulator = new Manipulator() 
 const $ = (elm) => manipulator.selector(elm)
 
@@ -19,14 +19,19 @@ recipes.forEach(recipe => $('#recipe-list').append(CardTemplate(recipe)))
 $('#search_term')
   .value('')
   .on('input', ({ target }) => {
-    if (!target.value && !!tagList.map(({ terms }) => terms).flat().length) {
+    console.log(!target.value, !!tagList.map(({terms}) => terms).length)
+    if (!target.value && !!tagList.map(({terms}) => terms).length) {
+      let newResult = recipes
       tagList.forEach(({ type, terms }) => {
-        result = search.searchByTag(type, recipes, terms)
+        newResult = search.searchByTag(type, newResult, terms)
       })
-    } else if (result.length) {
-        result = search.searchByterm(target.value, result)
+      result = newResult
+    }
+    else if (result.length) {
+      let newResult = search.searchByterm(target.value, result)
+      result = newResult
     } else {
-      result = search.searchByterm(target.value)
+      result = search.searchByterm(target.value)    
     }
     
     updateRender(result, 200)
@@ -66,6 +71,8 @@ $('.item')
         terms: [value]
       })
     }
+
+    target.value = ''
     
     tagList.forEach((tag) => {
       if (tag.terms.length) {
