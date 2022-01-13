@@ -5,7 +5,7 @@ import { Manipulator } from './lib/Manipulator';
 import { Search } from './Search';
 import { CardTemplate, TagTemplate } from './templates';
 
-const search = new Search('functional')
+const search = new Search('native')
 const manipulator = new Manipulator() 
 const $ = (elm) => manipulator.selector(elm)
 
