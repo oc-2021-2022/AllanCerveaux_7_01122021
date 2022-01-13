@@ -1,27 +1,38 @@
-$datalist-width: 30%;
+.datalist-container {
+  z-index: 100;
+  width: 89vw;
+  @media screen and (max-width: 375px) {
+    width: 100vw;
+  }
+}
 .custom-datalist {
+  z-index: inherit;
   &-open {
     & > div.input-group > .form-control,
     & > div.input-group > .input-group-text {
       border-radius: 0.25rem 0.25rem 0 0;
     }
-    width: $datalist-width + 29.6%;
+    width: 40vw;
+    @media screen and (max-width: 1024px) {
+      width: 90vw;
+    }
+    @media screen and (max-width: 375px) {
+      width: 100vw;
+    }
   }
 
-  .datalist {
-    width: $datalist-width;
+  ul.datalist {
+    height: 70%;
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
+    overflow-y: scroll;
+    padding: 0.5em 1.5em;
     border-radius: 0px 0px 5px 5px;
-    position: absolute;
-    color: $white;
-    padding: 0 0.5em;
-    z-index: 1;
-    span.item {
+    li {
+      display: inline;
+      list-style: none;
+      color: $white;
       width: 30%;
-      margin: 0.5em;
-      text-align: center;
       &:hover {
         cursor: pointer;
         text-decoration: underline;

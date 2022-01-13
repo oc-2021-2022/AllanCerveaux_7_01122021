@@ -8,7 +8,7 @@ export const generateTag = (types, arr = recipes) => types
   .forEach(type =>
     $(`#datalist-${type}`)
       .html(
-        optionList(type, arr).map(value => /* html */`<span class="item ${type}">${value}</span>`).join('')
+        optionList(type, arr).map(value => /* html */`<li class="item ${type}">${value}</li>`).join('')
       )
   )
 
@@ -40,7 +40,7 @@ export const optionList = (type, arr) => {
 
 export function toggleItem(arr) {
   ['ingredient', 'ustensil', 'appliance'].forEach(type => {
-    $(`#datalist-${type} > span.item`).each(item => {
+    $(`#datalist-${type} > .item`).each(item => {
       if (!optionList(type, arr).includes($(item).text())) $(item).hide()
       else item.style.display = 'inline'
     })
