@@ -1,8 +1,8 @@
 import { recipes } from '../../resources/data/recipes.json'
 import { Alert } from '../component/alert'
+import { strNormalizer } from '../lib/helpers/strNomalizer'
 import * as functional from './search-algo/functional'
 import * as native from './search-algo/native'
-
 export class Search {
   constructor(mode) {
     this.search_service = null
@@ -18,6 +18,7 @@ export class Search {
   }
 
   searchByterm(term, arr = []) {
+    term = strNormalizer(term)
     let alert
     let result = []
     const searched_array = arr.length ? arr : recipes

@@ -13,32 +13,36 @@ generateTag(['ingredient', 'ustensil', 'appliance'])
 
 let result = []
 let tagList = []
-
+let isTypingTimeout = null
 recipes.forEach(recipe => $('#recipe-list').append(CardTemplate(recipe)))
 
 $('#search_term')
   .value('')
   .on('input', ({ target }) => {
-    if (!target.value && !!tagList.map(({terms}) => terms).flat().length) {
-      let newResult = recipes
-      tagList.forEach(({ type, terms }) => {
-        newResult = search.searchByTag(type, newResult, terms)
-      })
-      result = newResult
-    }
-    else if (result.length) {
-      let newResult = search.searchByterm(target.value, result)
-      result = newResult
-    } else {
-      let newResult = search.searchByterm(target.value)
-      result = newResult
-    }
-
-    updateRender(result, 200)
+    clearTimeout(isTypingTimeout)
     
-    if (search.error.value) {
-      search.error.alert.display($('main'))
-    }
+    isTypingTimeout = setTimeout(() => {
+      if (!target.value && !!tagList.map(({terms}) => terms).flat().length) {
+        let newResult = recipes
+        tagList.forEach(({ type, terms }) => {
+          newResult = search.searchByTag(type, newResult, terms)
+        })
+        result = newResult
+      }
+      else if (result.length) {
+        let newResult = search.searchByterm(target.value, result)
+        result = newResult
+      } else {
+        let newResult = search.searchByterm(target.value)
+        result = newResult
+      }
+      
+      updateRender(result)
+      
+      if (search.error.value) {
+        search.error.alert.display($('main'))
+      }
+    }, 100);
   })
 
 $('.input-tag')
@@ -117,14 +121,12 @@ $('.item')
 const updateRender = (result = [], timeout = 0) => {
   toggleItem(result)
   const result_id = result.map(({ id }) => id.toString())
-  setTimeout(() => {  
-    $('.recipe').each(recipe => {
-      if (search.error) recipe.style.display = 'none'
-      if (!result_id.includes($(recipe).getAttribute('data-id'))) {
-        recipe.style.display = 'none'
-      } else {
-        recipe.style.display = 'block'
-      }
-    })
-  }, timeout);
+  $('.recipe').each(recipe => {
+    if (search.error) recipe.style.display = 'none'
+    if (!result_id.includes($(recipe).getAttribute('data-id'))) {
+      recipe.style.display = 'none'
+    } else {
+      recipe.style.display = 'block'
+    }
+  })
 }

@@ -1,11 +1,13 @@
 import { compare } from '../../lib/helpers/compare'
+import { strNormalizer } from '../../lib/helpers/strNomalizer'
 /**
  * Filter Recipe Array with term.
  * @param {Recipe[]} arr 
  * @param {string} term 
  * @returns Recipe[]
  */
-export const search_by_name = (arr, term) => arr.filter(({ name }) => name.toLowerCase().includes(term.toLowerCase()))
+
+export const search_by_name = (arr, term) => arr.filter(({ name }) => strNormalizer(name).includes(strNormalizer(term)))
 
 /**
  * Check if ingredient has include in recipe.
@@ -18,7 +20,7 @@ export const search_by_name = (arr, term) => arr.filter(({ name }) => name.toLow
  */
 export const search_by_ingredient = (arr, term) => arr.filter(({ ingredients }) => {
   if (Array.isArray(term)) return ingredients.includes(...compare(term, ingredients))
-  return ingredients.includes(...ingredients.filter(({ ingredient }) => ingredient.toLowerCase().includes(term.toLowerCase())))
+  return ingredients.includes(...ingredients.filter(({ ingredient }) => strNormalizer(ingredient).includes(strNormalizer(term))))
 })
 
 /**
@@ -31,8 +33,8 @@ export const search_by_ingredient = (arr, term) => arr.filter(({ ingredients }) 
  * @returns Recipe[]
  */
 export const search_by_ustensil = (arr, term) => arr.filter(({ ustensils }) => {
-  if(Array.isArray(term)) return ustensils.includes(...compare(term, ustensils))
-  return ustensils.includes(term)
+  if (Array.isArray(term)) return ustensils.includes(...compare(term, ustensils))
+  return ustensils.includes(...ustensils.filter(ustensil => strNormalizer(ustensil).includes(term)))
 })
 
 /**
@@ -44,5 +46,5 @@ export const search_by_ustensil = (arr, term) => arr.filter(({ ustensils }) => {
  */
 export const search_by_appliance = (arr, term) => arr.filter(({ appliance }) => {
   if(Array.isArray(term)) return appliance.includes(term)
-  return appliance.toLowerCase().includes(term)
+  return strNormalizer(appliance).includes(term)
 })
