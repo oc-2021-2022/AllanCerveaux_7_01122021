@@ -6,8 +6,8 @@
   "license": "MIT",
   "scripts": {
     "start": "parcel src/index.html --open",
-    "prebuild": "npx rimraf dist",
-    "build": "parcel build --public-url ./ ./src/index.html"
+    "prebuild": "npx rimraf dist && parcel build --public-url ./ ./src/index.html",
+    "build": "surge ./dist http://les-petit-plat-native.surge.sh/"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.1.1",
