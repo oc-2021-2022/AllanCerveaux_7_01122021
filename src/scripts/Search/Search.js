@@ -23,14 +23,18 @@ export class Search {
     let result = []
     const searched_array = arr.length ? arr : recipes
 
-    if (!term.length) result = recipes
+    if (!term.length) {
+      result = recipes
+    } else {
+      result.push(
+        ...this.search_service.search_by_name(searched_array, term),
+        ...this.search_service.search_by_ingredient(searched_array, term),
+        ...this.search_service.search_by_ustensil(searched_array, term),
+        ...this.search_service.search_by_appliance(searched_array, term)
+      )
+    }
 
-    result.push(
-      ...this.search_service.search_by_name(searched_array, term),
-      ...this.search_service.search_by_ingredient(searched_array, term),
-      ...this.search_service.search_by_ustensil(searched_array, term),
-      ...this.search_service.search_by_appliance(searched_array, term)
-    )
+
     if (result.length < 1) {
       alert = new Alert('warning', 'Aucune recette ne correspond à votre critère... vous pouvez chercher « tarte aux pommes », « poisson », etc...')
       this.error = {
